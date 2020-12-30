@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".screen.main.home.HomeFragment">
+
+    <FrameLayout
+        android:id="@+id/frameLayout"
+        android:layout_width="0dp"
+        android:layout_height="?actionBarSize"
+        android:background="@color/purple_500"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/btnDisconnect"
+            android:layout_width="56dp"
+            android:layout_height="56dp"
+            android:scaleType="center"
+            app:srcCompat="@drawable/ic_baseline_exit" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:layout_marginStart="56dp"
+            android:gravity="center_vertical"
+            android:text="gdax"
+            android:textColor="@color/white"
+            android:textSize="20sp" />
+
+    </FrameLayout>
+
+    <ScrollView
+        android:id="@+id/quotationFiledWrapper"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/frameLayout">
+
+        <TextView
+            android:id="@+id/tvQuotationFiled"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="       (\\/)\n      (°,,,°)\n ___(\\/)___" />
+
+    </ScrollView>
+
+    <ProgressBar
+        android:id="@+id/pbLoading"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="@+id/tvLoading"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/frameLayout"
+        app:layout_constraintVertical_chainStyle="packed" />
+
+    <TextView
+        android:id="@+id/tvLoading"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        android:singleLine="true"
+        android:ellipsize="end"
+        android:text="[BTC-USD]"
+        android:textAlignment="center"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/pbLoading" />
+
+    <androidx.constraintlayout.widget.Group
+        android:id="@+id/loadingWrapper"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:constraint_referenced_ids="tvLoading,pbLoading" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
